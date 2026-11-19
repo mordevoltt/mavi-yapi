@@ -108,11 +108,19 @@ def sitemap_xml(request):
 
     xml_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">',
         '  <url>',
         f'    <loc>{domain}/</loc>',
         '    <changefreq>daily</changefreq>',
         '    <priority>1.0</priority>',
+        '    <video:video>',
+        f'      <video:thumbnail_loc>{domain}/static/images/projects/is_6.jpg</video:thumbnail_loc>',
+        '      <video:title>Mavi Yapı Kocaeli Şantiye Çalışmaları &amp; Ustalık Kesitleri</video:title>',
+        '      <video:description>Mavi Yapı ustalarının Kocaeli villa ve konut projelerindeki canlı alçı, boya, mantolama ve taş işçiliği uygulamaları.</video:description>',
+        f'      <video:content_loc>{domain}/static/images/projects/is_video.mp4</video:content_loc>',
+        '      <video:publication_date>2026-11-19T00:00:00+03:00</video:publication_date>',
+        '      <video:family_friendly>yes</video:family_friendly>',
+        '    </video:video>',
         '  </url>'
     ]
 

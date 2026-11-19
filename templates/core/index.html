@@ -319,7 +319,12 @@
                         </a>
                     </div>
                 </div>
-                <div class="lg:col-span-7 rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-black flex items-center justify-center aspect-video sm:aspect-auto">
+                <div class="lg:col-span-7 rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-black flex items-center justify-center aspect-video sm:aspect-auto" itemscope itemtype="https://schema.org/VideoObject">
+                    <meta itemprop="name" content="Mavi Yapı Kocaeli Şantiye İşçilik Kesitleri">
+                    <meta itemprop="description" content="Mavi Yapı ustalarının Kocaeli villa ve konut projelerindeki canlı alçı, boya, mantolama ve taş işçiliği uygulamaları.">
+                    <meta itemprop="thumbnailUrl" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/projects/is_6.jpg' %}">
+                    <meta itemprop="uploadDate" content="2026-11-19T00:00:00+03:00">
+                    <meta itemprop="contentUrl" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/projects/is_video.mp4' %}">
                     <video controls class="w-full max-h-[420px] object-cover" poster="{% static 'images/projects/is_6.jpg' %}">
                         <source src="{% static 'images/projects/is_video.mp4' %}" type="video/mp4">
                         Tarayıcınız video oynatmayı desteklemiyor.
