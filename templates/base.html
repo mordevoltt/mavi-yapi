@@ -6,6 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>{% block title %}{{ site_setting.title }}{% endblock %}</title>
     <meta name="description" content="Kocaeli geneli (İzmit, Gebze, Kartepe, Başiskele, Körfez ve tüm ilçeler) anahtar teslim inşaat, alçı, boya, dış cephe mantolama, fayans ve duvar ustalığı. 0541 635 41 13">
+    <meta name="keywords" content="Mavi Yapı, Kocaeli inşaat, Kocaeli tadilat, İzmit boyacı, Kartepe taş duvar, Gebze fayans ustası, Kocaeli dış cephe mantolama, alçıpan asma tavan Kocaeli">
+    <meta name="author" content="Mavi Yapı">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- Geo Meta Tags for Kocaeli Local SEO -->
+    <meta name="geo.region" content="TR-41">
+    <meta name="geo.placename" content="Kocaeli">
+    <meta name="geo.position" content="40.7654;29.9408">
+    <meta name="ICBM" content="40.7654, 29.9408">
+
+    <!-- Open Graph / Facebook / WhatsApp Preview -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:site_name" content="Mavi Yapı İnşaat">
+    <meta property="og:title" content="Mavi Yapı | Kocaeli İnşaat, Tadilat & Mimari Dekorasyon">
+    <meta property="og:description" content="Kocaeli geneli kaliteli işçilik, güvenli yapılar. Anahtar teslim inşaat, alçı-boya, mantolama ve taş duvar. 0541 635 41 13">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/mavi_yapi_banner.jpg' %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+
+    <!-- Google Structured Data (Schema.org JSON-LD for LocalBusiness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Mavi Yapı",
+      "alternateName": "Mavi Yapı İnşaat & Mimari Dekorasyon",
+      "image": "{{ request.scheme }}://{{ request.get_host }}{% static 'images/mavi_yapi_banner.jpg' %}",
+      "telephone": "+905416354113",
+      "email": "iletisim@maviyapi.com",
+      "url": "{{ request.scheme }}://{{ request.get_host }}/",
+      "priceRange": "₺₺",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kocaeli Geneli Hizmet Noktaları",
+        "addressLocality": "Kocaeli",
+        "addressRegion": "Kocaeli",
+        "postalCode": "41000",
+        "addressCountry": "TR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.7654,
+        "longitude": 29.9408
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:00",
+          "closes": "19:30"
+        }
+      ],
+      "areaServed": [
+        {"@type": "City", "name": "Kocaeli"},
+        {"@type": "AdministrativeArea", "name": "İzmit"},
+        {"@type": "AdministrativeArea", "name": "Gebze"},
+        {"@type": "AdministrativeArea", "name": "Kartepe"},
+        {"@type": "AdministrativeArea", "name": "Başiskele"},
+        {"@type": "AdministrativeArea", "name": "Gölcük"},
+        {"@type": "AdministrativeArea", "name": "Körfez"},
+        {"@type": "AdministrativeArea", "name": "Darıca"},
+        {"@type": "AdministrativeArea", "name": "Derince"}
+      ],
+      "makesOffer": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Anahtar Teslim İnşaat & Komple Tadilat"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Alçı & Alçıpan Asma Tavan İşleri"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "İç & Dış Cephe Boya Badana"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dış Cephe Mantolama & Yalıtım"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fayans, Seramik & Granit Döşeme"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Duvar Örme & Doğal Taş Ustalığı"}}
+      ]
+    }
+    </script>
     
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

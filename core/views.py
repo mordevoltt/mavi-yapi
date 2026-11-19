@@ -1,7 +1,7 @@
 import urllib.parse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from .models import SiteSetting, Service, ProjectCategory, Project, Testimonial, QuoteRequest
 from .forms import QuoteRequestForm
 
@@ -88,3 +88,51 @@ def project_detail(request, pk):
         'form': form,
     }
     return render(request, 'core/project_detail.html', context)
+
+
+def robots_txt(request):
+    domain = request.build_absolute_uri('/').rstrip('/')
+    lines = [
+        "User-agent: *",
+        "Allow: /",
+        "",
+        f"Sitemap: {domain}/sitemap.xml"
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain; charset=utf-8")
+
+
+def sitemap_xml(request):
+    domain = request.build_absolute_uri('/').rstrip('/')
+    services = Service.objects.filter(is_active=True).order_by('order')
+    projects = Project.objects.all().order_by('order')
+
+    xml_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        '  <url>',
+        f'    <loc>{domain}/</loc>',
+        '    <changefreq>daily</changefreq>',
+        '    <priority>1.0</priority>',
+        '  </url>'
+    ]
+
+    for s in services:
+        xml_lines.extend([
+            '  <url>',
+            f'    <loc>{domain}/hizmet/{s.slug}/</loc>',
+            '    <changefreq>weekly</changefreq>',
+            '    <priority>0.8</priority>',
+            '  </url>'
+        ])
+
+    for p in projects:
+        xml_lines.extend([
+            '  <url>',
+            f'    <loc>{domain}/proje/{p.id}/</loc>',
+            '    <changefreq>weekly</changefreq>',
+            '    <priority>0.7</priority>',
+            '  </url>'
+        ])
+
+    xml_lines.append('</urlset>')
+    return HttpResponse("\n".join(xml_lines), content_type="application/xml; charset=utf-8")
