@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import HttpResponse
 from django.conf import settings
 from django.conf.urls.static import static
 from core import views as core_views
@@ -24,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('robots.txt', core_views.robots_txt, name='robots_txt'),
     path('sitemap.xml', core_views.sitemap_xml, name='sitemap_xml'),
+    path('googlef8fb3d38e675abb4.html', lambda r: HttpResponse('google-site-verification: googlef8fb3d38e675abb4.html', content_type='text/html')),
     path('', include('core.urls')),
 ]
 
