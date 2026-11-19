@@ -1,0 +1,564 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Mavi Yapı | Kocaeli İnşaat, Tadilat & Mimari Dekorasyon{% endblock %}
+
+{% block content %}
+
+<!-- 1. HERO BÖLÜMÜ (MAVİ YAPI - KOCAELİ GENELİ HİZMET) -->
+<section class="relative bg-slate-900 text-white overflow-hidden py-14 sm:py-20 lg:py-24 border-b border-slate-800">
+    <!-- Arka Plan Görseli & Karartma -->
+    <div class="absolute inset-0 z-0">
+        <img src="{% static 'images/projects/is_7.jpg' %}" 
+             alt="Mavi Yapı Kocaeli İnşaat" 
+             class="w-full h-full object-cover object-center opacity-20">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/95 to-slate-900/80"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-14 items-center">
+            
+            <!-- Sol: Başlık & Eylemler -->
+            <div class="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
+                
+                <!-- Konum & Slogan Rozeti -->
+                <div class="inline-flex items-center space-x-2 bg-mavi-500/15 border border-mavi-500/30 px-3.5 sm:px-4 py-1.5 rounded-full text-mavi-300 text-xs sm:text-sm font-semibold max-w-full">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
+                    <span class="truncate sm:whitespace-normal">Kocaeli Geneli • Kaliteli İşçilik, Güvenli Yapılar</span>
+                </div>
+
+                <!-- Ana Başlık -->
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15]">
+                    Kocaeli Anahtar Teslim İnşaat, Alçı, Boya & <span class="text-mavi-400">Dış Cephe</span>
+                </h1>
+
+                <!-- Alt Açıklama -->
+                <p class="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    <strong>Mavi Yapı</strong> güvencesiyle; İzmit, Gebze, Kartepe, Başiskele, Körfez ve tüm Kocaeli ilçelerinde kaba inşaattan lüks villa tadilatına, alçı-boyadan dış cephe mantolama ve lazer terazili fayans ustalığına kadar tüm projeleriniz emin ellerde.
+                </p>
+
+                <!-- Hızlı Butonlar (Mobil, Tablet & PC Uyumlu) -->
+                <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-3.5">
+                    <a href="#teklif" class="mavi-btn text-white font-bold px-6 sm:px-7 py-3.5 rounded-xl shadow-lg transition text-sm flex items-center justify-center active:scale-95">
+                        <i class="fa-solid fa-pen-ruler mr-2"></i> Ücretsiz Keşif İste
+                    </a>
+                    <a href="https://wa.me/905416354113?text=Merhaba%20Mavi%20Yap%C4%B1,%20Kocaeli'deki%20yap%C4%B1lacak%20yerin%20foto%C4%9Fraf%C4%B1n%C4%B1%20at%C4%B1p%20bilgi%20ve%20fiyat%20almak%20istiyorum." 
+                       target="_blank" 
+                       class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 sm:px-6 py-3.5 rounded-xl transition flex items-center justify-center text-sm shadow-md active:scale-95">
+                        <i class="fa-brands fa-whatsapp mr-2 text-lg"></i> WhatsApp: 0541 635 41 13
+                    </a>
+                    <a href="#projeler" class="bg-white/10 hover:bg-white/15 text-white font-semibold px-5 sm:px-6 py-3.5 rounded-xl border border-white/15 transition flex items-center justify-center text-sm">
+                        Yaptığımız İşler
+                    </a>
+                </div>
+
+                <!-- 4 Temel Hizmet İlkesi -->
+                <div class="pt-5 border-t border-slate-800 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-xs text-slate-300">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-mavi-400 flex-shrink-0"></i>
+                        <span>Kocaeli'de Ücretsiz Keşif</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-mavi-400 flex-shrink-0"></i>
+                        <span>Temiz & Titiz Çalışma</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-mavi-400 flex-shrink-0"></i>
+                        <span>1. Sınıf Malzeme</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-mavi-400 flex-shrink-0"></i>
+                        <span>Doğrudan Usta Muhataplığı</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sağ: Keşif Formu (Veritabanına Kaydeder & WhatsApp'a Aktarır) -->
+            <div class="lg:col-span-5" id="teklif">
+                <div class="bg-white rounded-3xl p-5 sm:p-7 md:p-8 shadow-2xl border border-slate-100 text-slate-900 relative">
+                    <div class="pb-3 sm:pb-4 border-b border-slate-100 mb-4 sm:mb-5">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-mavi-600 uppercase tracking-wider block">Mavi Yapı • Kocaeli</span>
+                            <span class="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full flex items-center">
+                                <i class="fa-brands fa-whatsapp mr-1 text-xs"></i> WhatsApp & Panel
+                            </span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 mt-1">Hızlı Keşif Talebi</h3>
+                        <p class="text-xs text-slate-500 mt-1">Formu doldurduğunuzda bilgileriniz ustanın WhatsApp'ına ve sisteme anında iletilir.</p>
+                    </div>
+
+                    <form id="heroQuoteForm" action="{% url 'core:home' %}" method="POST" class="space-y-3 sm:space-y-3.5">
+                        {% csrf_token %}
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Adınız Soyadınız *</label>
+                            <input type="text" name="name" required placeholder="Adınız Soyadınız" 
+                                   class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-300 focus:border-mavi-500 focus:ring-2 focus:ring-mavi-500/20 text-slate-900 placeholder-slate-400 text-sm transition outline-none">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Telefon *</label>
+                                <input type="tel" name="phone" required placeholder="05XX XXX XX XX" 
+                                       class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-300 focus:border-mavi-500 focus:ring-2 focus:ring-mavi-500/20 text-slate-900 placeholder-slate-400 text-sm transition outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Kocaeli İlçe / Mahalle *</label>
+                                <input type="text" name="district" required placeholder="Örn: İzmit, Gebze, Kartepe..." 
+                                       class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-300 focus:border-mavi-500 focus:ring-2 focus:ring-mavi-500/20 text-slate-900 placeholder-slate-400 text-sm transition outline-none">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Yapılacak İş Türü *</label>
+                            <select name="service_type" required 
+                                    class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-300 focus:border-mavi-500 focus:ring-2 focus:ring-mavi-500/20 text-slate-800 text-sm transition outline-none bg-white cursor-pointer">
+                                <option value="komple_tadilat">🏠 Anahtar Teslim İnşaat & Komple Tadilat</option>
+                                <option value="alci_alcipan">🎨 Alçı & Alçıpan Asma Tavan İşleri</option>
+                                <option value="boya">🖌️ İç & Dış Cephe Boya Badana</option>
+                                <option value="dis_cephe">🏢 Dış Cephe Mantolama & Kaplama</option>
+                                <option value="fayans_seramik">📐 Fayans, Seramik & Granit Döşeme</option>
+                                <option value="duvar">🧱 Duvar Örme & Doğal Taş İşçiliği</option>
+                                <option value="cati_izolasyon">🛡️ Çatı Tamiratı & İzolasyon</option>
+                                <option value="diger">⚙️ Diğer Özel İnşaat / Onarım İşi</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">İş Hakkında Kısa Not *</label>
+                            <textarea name="message" rows="3" required placeholder="Örn: Kartepe'de müstakil ev dış cephe mantolama ve iç boya işi..." 
+                                      class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-300 focus:border-mavi-500 focus:ring-2 focus:ring-mavi-500/20 text-slate-900 placeholder-slate-400 text-sm transition outline-none"></textarea>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="w-full mavi-btn text-white font-bold py-3.5 rounded-xl shadow-md transition text-sm flex items-center justify-center active:scale-95">
+                            <i class="fa-solid fa-paper-plane mr-2"></i> Keşif Talebini Gönder & WhatsApp'a Aktar
+                        </button>
+                    </form>
+
+                    <!-- Başarı Bildirimi -->
+                    <div id="formSuccessAlert" class="hidden absolute inset-0 bg-white/95 backdrop-blur-sm rounded-3xl p-6 flex flex-col items-center justify-center text-center space-y-4">
+                        <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900">Talebiniz Alındı!</h4>
+                        <p class="text-xs text-slate-600 max-w-xs leading-relaxed">
+                            Bilgileriniz Mavi Yapı sistemine kaydedildi ve ustanın WhatsApp sohbeti açıldı.
+                        </p>
+                        <a id="manualWaLink" href="https://wa.me/905416354113" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-5 rounded-xl text-xs sm:text-sm flex items-center shadow-lg active:scale-95 transition">
+                            <i class="fa-brands fa-whatsapp text-base mr-2"></i> WhatsApp'ı Hemen Aç
+                        </a>
+                        <button type="button" onclick="document.getElementById('formSuccessAlert').classList.add('hidden')" class="text-xs text-slate-400 hover:text-slate-600 pt-1">
+                            Yeni Form Doldur
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ŞİRKET KARTI BİLGİ ŞERİDİ (MAVİ YAPI RESMİ KARTI & KOCAELİ BİLGİSİ) -->
+<section class="py-10 sm:py-12 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-200 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-sm">
+            <div class="flex-1 space-y-3 text-center lg:text-left">
+                <span class="text-xs font-bold text-mavi-600 uppercase tracking-widest block">Kurumsal Güvence</span>
+                <h3 class="text-2xl sm:text-3xl font-black text-slate-900">Mavi Yapı İle Güvenli Yapılar</h3>
+                <p class="text-slate-600 text-sm leading-relaxed max-w-xl">
+                    Anahtar teslim inşaat, alçı, boya, dış cephe mantolama, fayans ve duvar işlerinizde 18 yıllık saha tecrübemizle yanınızdayız. <strong>Kocaeli'nin tüm ilçelerine</strong> yerinde ücretsiz keşfe geliyoruz.
+                </p>
+                <div class="pt-2 flex flex-wrap gap-2.5 sm:gap-3.5 justify-center lg:justify-start text-xs font-bold text-slate-800">
+                    <a href="tel:05416354113" class="bg-white px-3.5 py-2 rounded-xl border border-slate-200 hover:border-mavi-500 transition flex items-center shadow-sm">
+                        <i class="fa-solid fa-phone text-mavi-600 mr-2"></i> 0541 635 41 13
+                    </a>
+                    <a href="https://wa.me/905416354113" target="_blank" class="bg-white px-3.5 py-2 rounded-xl border border-slate-200 hover:border-emerald-500 transition flex items-center shadow-sm">
+                        <i class="fa-brands fa-whatsapp text-emerald-600 mr-2"></i> WhatsApp: 0541 635 41 13
+                    </a>
+                    <span class="bg-white px-3.5 py-2 rounded-xl border border-slate-200 flex items-center shadow-sm">
+                        <i class="fa-solid fa-location-dot text-mavi-600 mr-2"></i> Kocaeli Geneli Keşif
+                    </span>
+                </div>
+            </div>
+            <div class="w-full max-w-sm lg:w-96 rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-white p-2">
+                <img src="{% static 'images/mavi_yapi_banner.jpg' %}" alt="Mavi Yapı Kartvizit" class="w-full h-auto object-contain rounded-xl">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. HİZMETLERİMİZ (MAVİ YAPI UZMANLIK ALANLARI) -->
+<section id="hizmetler" class="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+            <span class="text-xs font-bold text-mavi-600 uppercase tracking-widest block mb-1">Faaliyetlerimiz</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                Mavi Yapı Uzmanlık Alanları
+            </h2>
+            <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                Kocaeli ve çevre ilçelerde kaba inşaattan ince dekorasyona kadar tüm işlerinizi tek elden, tecrübeli ustalarımızla yürütüyoruz.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {% for service in services %}
+            <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm card-elevated flex flex-col justify-between">
+                <div>
+                    <!-- Görsel (Gerçek Proje Fotoğrafları) -->
+                    <div class="relative h-52 sm:h-56 overflow-hidden">
+                        <img src="{{ service.image_url }}" alt="{{ service.title }}" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4 w-10 h-10 rounded-xl bg-mavi-600 text-white flex items-center justify-center font-bold shadow">
+                            <i class="fa-solid {{ service.icon }} text-base"></i>
+                        </div>
+                    </div>
+
+                    <!-- Açıklama -->
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">
+                            {{ service.title }}
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            {{ service.short_description }}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Alt Aksiyon -->
+                <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-2 border-t border-slate-100 flex items-center justify-between">
+                    <a href="{% url 'core:service_detail' service.slug %}" class="text-xs font-bold text-slate-900 hover:text-mavi-600 transition flex items-center">
+                        Detaylı İncele <i class="fa-solid fa-arrow-right ml-1.5 text-xs text-mavi-600"></i>
+                    </a>
+                    <a href="https://wa.me/905416354113?text=Merhaba%20Mavi%20Yap%C4%B1,%20Kocaeli'deki%20yerim%20i%C3%A7in%20'{{ service.title }}'%20hizmetiniz%20hakk%C4%B1nda%20bilgi%20ve%20fiyat%20almak%20istiyorum." 
+                       target="_blank" 
+                       class="text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 px-3 py-1.5 rounded-lg transition">
+                        Fiyat Danış
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+<!-- 3. YATTIĞIMIZ İŞLER (GERÇEK SAHA FOTOĞRAFLARI - KOCAELİ) -->
+<section id="projeler" class="py-16 sm:py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+            <span class="text-xs font-bold text-mavi-600 uppercase tracking-widest block mb-1">Referanslarımız</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                Yaptığımız İşlerden Canlı Kareler
+            </h2>
+            <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                Mavi Yapı olarak Kocaeli geneli (İzmit, Gebze, Kartepe, Başiskele, Körfez ve tüm ilçeler) teslim ettiğimiz villa, konut, dış cephe ve iç dekorasyon işçilikleri.
+            </p>
+        </div>
+
+        <!-- Projeler Izgarası (Responsive: Mobilde 1, Tablette 2, Masaüstünde 3 Sütun) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {% for project in projects %}
+            <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm card-elevated flex flex-col justify-between">
+                <div>
+                    <!-- Proje Görseli -->
+                    <div class="relative h-60 sm:h-64 overflow-hidden">
+                        <img src="{{ project.image_url }}" alt="{{ project.title }}" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                        
+                        <!-- Konum & Teslim Yılı -->
+                        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-center text-xs text-white">
+                            <span class="flex items-center font-semibold bg-slate-950/60 backdrop-blur-md px-2.5 py-1 rounded-lg">
+                                <i class="fa-solid fa-location-dot text-mavi-400 mr-1.5"></i> {{ project.location }}
+                            </span>
+                            <span class="bg-mavi-600/90 backdrop-blur-md px-2.5 py-1 rounded-lg text-white font-semibold">
+                                {{ project.completion_year }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Açıklama -->
+                    <div class="p-5 sm:p-6">
+                        <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2 leading-snug">
+                            {{ project.title }}
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed line-clamp-3">
+                            {{ project.description }}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Detay Linki -->
+                <div class="p-5 sm:p-6 pt-0">
+                    <a href="{% url 'core:project_detail' project.id %}" class="w-full inline-flex items-center justify-center bg-slate-50 hover:bg-slate-100 text-slate-800 font-bold py-2.5 px-4 rounded-xl text-xs sm:text-sm border border-slate-200 transition active:scale-95">
+                        İncele
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Şantiyeden Video Bölümü (Tüm Cihazlara Uyumlu) -->
+        <div class="mt-12 sm:mt-16 bg-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-2xl overflow-hidden border border-slate-800">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5 space-y-4 text-center lg:text-left">
+                    <span class="text-xs font-bold text-mavi-400 uppercase tracking-widest block">Canlı Saha Kaydı</span>
+                    <h3 class="text-2xl sm:text-3xl font-black text-white">İşçiliğimizi Yerinde Görün</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Kocaeli şantiyelerimizden canlı çalışma videolarıyla ustalığımızın arkasında duruyoruz. Temiz işçilik, sağlam yapılar ve doğru malzeme için bize ulaşın.
+                    </p>
+                    <div class="pt-1 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                        <a href="https://wa.me/905416354113?text=Merhaba%20Mavi%20Yap%C4%B1,%20sitenizdeki%20canl%C4%B1%20videonuzu%20izledim.%20Kocaeli'deki%20yerim%20i%C3%A7in%20bilgi%20almak%20istiyorum." 
+                           target="_blank" 
+                           class="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl text-xs sm:text-sm transition shadow active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-lg mr-2"></i> WhatsApp: 0541 635 41 13
+                        </a>
+                        <a href="tel:05416354113" class="inline-flex items-center justify-center bg-white/10 hover:bg-white/15 text-white font-bold py-3 px-5 rounded-xl text-xs sm:text-sm border border-white/20 transition">
+                            <i class="fa-solid fa-phone mr-2 text-mavi-400"></i> Hemen Ara
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-black flex items-center justify-center aspect-video sm:aspect-auto">
+                    <video controls class="w-full max-h-[420px] object-cover" poster="{% static 'images/projects/is_6.jpg' %}">
+                        <source src="{% static 'images/projects/is_video.mp4' %}" type="video/mp4">
+                        Tarayıcınız video oynatmayı desteklemiyor.
+                    </video>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 4. NASIL ÇALIŞIYORUZ? -->
+<section id="surec" class="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+            <span class="text-xs font-bold text-mavi-600 uppercase tracking-widest block mb-1">İşleyiş</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                Nasıl Çalışıyoruz?
+            </h2>
+            <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                Kocaeli'nin her bölgesinde net ve şeffaf adımlarla ilerliyoruz.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+            <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-3">
+                <div class="w-10 h-10 rounded-xl bg-mavi-600 text-white flex items-center justify-center font-bold text-base shadow">
+                    1
+                </div>
+                <h3 class="text-base font-bold text-slate-900">İletişim & Randevu</h3>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    0541 635 41 13 üzerinden arar veya WhatsApp'tan yazarsınız, en uygun keşif saati için sözleşiriz.
+                </p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-3">
+                <div class="w-10 h-10 rounded-xl bg-mavi-600 text-white flex items-center justify-center font-bold text-base shadow">
+                    2
+                </div>
+                <h3 class="text-base font-bold text-slate-900">Yerinde Ücretsiz Keşif</h3>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    Kocaeli'deki adresinize gelip ölçüleri alır, mekanı gözümüzle inceler ve en mantıklı çözümü belirleriz.
+                </p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-3">
+                <div class="w-10 h-10 rounded-xl bg-mavi-600 text-white flex items-center justify-center font-bold text-base shadow">
+                    3
+                </div>
+                <h3 class="text-base font-bold text-slate-900">Titiz & Temiz İşçilik</h3>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    Belirlenen tarihte ekibimizle işe başlar, lazerli hassas ölçüm ve 1. sınıf malzemeyle çalışırız.
+                </p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-3">
+                <div class="w-10 h-10 rounded-xl bg-mavi-600 text-white flex items-center justify-center font-bold text-base shadow">
+                    4
+                </div>
+                <h3 class="text-base font-bold text-slate-900">Eksiksiz Teslimat</h3>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    İnşaat atıklarını temizleyip son kontrolleri yapar, yapınızı söz verdiğimiz günde teslim ederiz.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 5. MÜŞTERİ YORUMLARI -->
+<section id="yorumlar" class="py-16 sm:py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+            <span class="text-xs font-bold text-mavi-600 uppercase tracking-widest block mb-1">Müşteri Memnuniyeti</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                Kocaeli Müşterilerimizin Yorumları
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {% for item in testimonials %}
+            <div class="bg-slate-50 rounded-3xl p-6 sm:p-7 border border-slate-200/80 flex flex-col justify-between shadow-sm">
+                <div>
+                    <div class="flex items-center space-x-1 text-amber-500 mb-3 text-sm">
+                        {% for i in "12345" %}
+                        <i class="fa-solid fa-star"></i>
+                        {% endfor %}
+                    </div>
+                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed italic mb-6">
+                        "{{ item.comment }}"
+                    </p>
+                </div>
+
+                <div class="flex items-center space-x-3 pt-4 border-t border-slate-200">
+                    <div class="w-9 h-9 rounded-full bg-mavi-600 text-white font-bold flex items-center justify-center text-xs">
+                        {{ item.client_name|slice:":1" }}
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-sm">{{ item.client_name }}</h4>
+                        <span class="text-xs text-slate-500">{{ item.project_type }} • {{ item.location }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+<!-- 6. İLETİŞİM & KEŞİF BÖLÜMÜ (KOCAELİ) -->
+<section id="iletisim" class="py-16 sm:py-20 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+                <span class="text-xs font-bold text-mavi-400 uppercase tracking-widest block">Mavi Yapı İletişim Hattı</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
+                    Kocaeli'deki Yapınızı Birlikte Konuşalım
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
+                    İzmit, Gebze, Kartepe, Başiskele, Körfez ve Kocaeli'nin tüm ilçelerine gelip yerinde ücretsiz keşif yapıyoruz. Bizi hemen arayabilir veya WhatsApp'tan yazabilirsiniz.
+                </p>
+                <div class="pt-2 flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start">
+                    <a href="tel:05416354113" class="bg-white text-slate-900 font-bold px-6 py-3.5 rounded-xl text-center text-sm hover:bg-slate-100 transition flex items-center justify-center shadow-lg active:scale-95">
+                        <i class="fa-solid fa-phone text-mavi-600 mr-2 text-base"></i> Ara: 0541 635 41 13
+                    </a>
+                    <a href="https://wa.me/905416354113?text=Merhaba%20Mavi%20Yap%C4%B1,%20Kocaeli'deki%20in%C5%9Faat%20tadilat%20i%C5%9Fim%20i%C3%A7in%20WhatsApp'tan%20yaz%C4%B1yorum." 
+                       target="_blank" 
+                       class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3.5 rounded-xl text-center text-sm transition flex items-center justify-center shadow-lg active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-lg mr-2"></i> WhatsApp: 0541 635 41 13
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sağ: Hızlı Keşif Formu -->
+            <div class="lg:col-span-5 bg-white text-slate-900 p-6 sm:p-7 md:p-8 rounded-3xl shadow-2xl">
+                <h3 class="text-lg font-bold mb-1 text-slate-900">Kocaeli Keşif Formu</h3>
+                <p class="text-xs text-slate-500 mb-4">Bilgilerinizi bırakın, ustamız en kısa sürede arasın.</p>
+                
+                <form id="bottomQuoteForm" action="{% url 'core:home' %}" method="POST" class="space-y-3">
+                    {% csrf_token %}
+                    <div>
+                        <input type="text" name="name" required placeholder="Adınız Soyadınız" 
+                               class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-200 text-sm outline-none focus:border-mavi-500">
+                    </div>
+                    <div>
+                        <input type="tel" name="phone" required placeholder="Telefon Numaranız" 
+                               class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-200 text-sm outline-none focus:border-mavi-500">
+                    </div>
+                    <div>
+                        <input type="text" name="district" required placeholder="Kocaeli İlçe / Mahalle" 
+                               class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-200 text-sm outline-none focus:border-mavi-500">
+                    </div>
+                    <div>
+                        <select name="service_type" required class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-200 text-sm outline-none bg-white">
+                            <option value="komple_tadilat">Anahtar Teslim İnşaat & Komple Tadilat</option>
+                            <option value="alci_alcipan">Alçı & Alçıpan İşleri</option>
+                            <option value="boya">İç & Dış Boya Badana</option>
+                            <option value="dis_cephe">Dış Cephe Mantolama</option>
+                            <option value="fayans_seramik">Fayans / Seramik Döşeme</option>
+                            <option value="duvar">Duvar & Taş Ustalığı</option>
+                        </select>
+                    </div>
+                    <div>
+                        <textarea name="message" rows="3" required placeholder="Yapılacak iş hakkında kısa bilgi..." 
+                                  class="w-full px-3.5 py-2.5 sm:py-3 rounded-xl border border-slate-200 text-sm outline-none focus:border-mavi-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full mavi-btn text-white font-bold py-3.5 rounded-xl text-sm transition shadow-md active:scale-95">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Gönder & WhatsApp'a Aktar
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    function setupFormSubmit(formId) {
+        const form = document.getElementById(formId);
+        if (!form) return;
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> İletiliyor...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
+            formData.append('ajax', '1');
+
+            fetch(form.action, {
+                method: 'POST',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+
+                if (data.status === 'success') {
+                    // Cihaz algılama: Telefon ve tabletlerde WhatsApp uygulamasını doğrudan aç
+                    const isMobileOrTablet = /Android|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent);
+                    if (isMobileOrTablet) {
+                        window.location.href = data.whatsapp_url;
+                    } else {
+                        window.open(data.whatsapp_url, '_blank');
+                    }
+
+                    const successAlert = document.getElementById('formSuccessAlert');
+                    if (successAlert) {
+                        const manualLink = document.getElementById('manualWaLink');
+                        if (manualLink) manualLink.href = data.whatsapp_url;
+                        successAlert.classList.remove('hidden');
+                    } else {
+                        alert(data.message);
+                    }
+                    form.reset();
+                } else {
+                    alert('Lütfen formdaki tüm alanları eksiksiz doldurunuz.');
+                }
+            })
+            .catch(err => {
+                form.submit();
+            });
+        });
+    }
+
+    setupFormSubmit('heroQuoteForm');
+    setupFormSubmit('bottomQuoteForm');
+</script>
+{% endblock %}
